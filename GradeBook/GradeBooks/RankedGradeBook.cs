@@ -19,7 +19,10 @@ namespace GradeBook.GradeBooks
                 i++;
                 foreach (var grades in student.Grades)
                 {
-                    Console.WriteLine(student.Grades);
+                    if (grades > 80) return 'A';
+                    if (grades < 80 && grades > 60) return 'B';
+                    if (grades > 60 && grades > 40) return 'C';
+                    if (grades > 40 && grades > 20) return 'D';
                 }
             }
 
@@ -29,10 +32,6 @@ namespace GradeBook.GradeBooks
             }
             else
             {
-                switch (Type)
-                {
-                    
-                }
                 return 'F';
             }
             
