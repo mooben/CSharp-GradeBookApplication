@@ -13,16 +13,18 @@ namespace GradeBook.GradeBooks
         public override char GetLetterGrade(double averageGrade)
         {
             int i = 0;
-            int a,b,c,d,e,f = 0;
+
+            char gradeChar = '_';
             foreach (var student in Students)
             {
                 i++;
                 foreach (var grades in student.Grades)
                 {
-                    if (grades > 80) return 'A';
-                    if (grades < 80 && grades > 60) return 'B';
-                    if (grades > 60 && grades > 40) return 'C';
-                    if (grades > 40 && grades > 20) return 'D';
+                    if (grades > 80) gradeChar = 'A';
+                    if (grades < 79 && grades > 60) gradeChar = 'B';
+                    if (grades > 59 && grades > 40) gradeChar = 'C';
+                    if (grades > 39 && grades > 20) gradeChar = 'D';
+                    if (grades < 19) gradeChar = 'F';
                 }
             }
 
@@ -30,11 +32,8 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to works");
             }
-            else
-            {
-                return 'F';
-            }
-            
+
+            return gradeChar;
         }
     }
 }
