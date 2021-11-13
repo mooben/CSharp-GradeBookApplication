@@ -17,10 +17,9 @@ namespace GradeBook.GradeBooks
             foreach (var student in Students)
             {
                 i++;
-
-                switch (student.Grades)
+                foreach (var grades in student.Grades)
                 {
-                    
+                    Console.WriteLine(student.Grades);
                 }
             }
 
