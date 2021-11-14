@@ -18,6 +18,7 @@ namespace GradeBook.GradeBooks
             foreach (var student in Students)
             {
                 i++;
+                return 'A';
                 foreach (var grades in student.Grades)
                 {
                     if (grades >= 80) gradeChar = 'A';
