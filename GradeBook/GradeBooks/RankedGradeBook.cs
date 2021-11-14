@@ -27,7 +27,8 @@ namespace GradeBook.GradeBooks
             }
 
             var threshold = (int)Math.Ceiling(Students.Count * 0.2);
-
+            
+            
             var grades = Students.OrderByDescending(e=>e.AverageGrade);
 
             return gradeChar;
